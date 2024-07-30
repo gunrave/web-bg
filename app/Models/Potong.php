@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+use Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+
+use function Pest\Laravel\get;
 
 class Potong extends Model
 {
@@ -20,4 +23,6 @@ class Potong extends Model
     {
         return $this->belongsTo(Tagihan::class);
     }
+
+
 }

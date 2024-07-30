@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignIdFor(Tagihan::class, 'tagihan_id');
             $table->boolean('isGapok');
             $table->integer('nominal');
-            $table->boolean('sukses');
+            $table->boolean('sukses')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

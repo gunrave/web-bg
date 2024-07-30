@@ -146,10 +146,9 @@ class TagihanResource extends Resource
                     //     ])
                     //     ->icon('heroicon-o-banknotes')
                     //     ,
-                    CreateAction::make('potongan')
+                    Action::make('potongan')
                         ->model(Potong::class)
                         ->form([
-
                             Placeholder::make('tagihan')
                                 ->label('Total Tagihan')
                                 ->content(fn (Tagihan $record): ?string => $record->jumlah),
@@ -164,9 +163,6 @@ class TagihanResource extends Resource
                                 ->required()
                                 ->numeric(),
                         ])
-                        // // ->using(function (array $data, string $model): Model{
-                        // //     return $model::create($data);
-                        // })
                         ,
                     Tables\Actions\EditAction::make(),
                 ]),
