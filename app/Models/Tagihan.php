@@ -11,13 +11,13 @@ class Tagihan extends Model
 
     protected $fillable = [
         'pegawai_id',
-        'periode_tagihan',
+        'periode_id',
         'jumlah',
     ];
 
     public function periode()
     {
-        return $this->belongsTo(periode_tagihan::class, 'periode_tagihan', 'id');
+        return $this->belongsTo(periode_tagihan::class,'periode_id','id');
     }
 
     public function pegawai()

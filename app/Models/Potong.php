@@ -24,5 +24,15 @@ class Potong extends Model
         return $this->belongsTo(Tagihan::class);
     }
 
+    public function getGapokAttribute()
+    {
+        $gapok = $this->where('isGapok', 1);
+        return $gapok;
+    }
+
+    // public function getSuksesAttribute()
+    // {
+    //     return $this->where('sukses')
+    // }
 
 }

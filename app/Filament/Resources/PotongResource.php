@@ -10,6 +10,7 @@ use Filament\Forms;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -33,9 +34,6 @@ class PotongResource extends Resource
     {
         return $form
             ->schema([
-                // Placeholder::make('tagihan')
-                //     ->label('Total Tagihan')
-                //     ->content(fn (Tagihan $record): ?string => $record->jumlah),
                 Select::make('tagihan_id')
                     ->label('Tagihan')
                     ->relationship(name: 'tagihan', titleAttribute: 'id')
@@ -51,6 +49,7 @@ class PotongResource extends Resource
                 TextInput::make('nominal')
                     ->required()
                     ->numeric(),
+                Toggle::make('sukses'),
             ]);
     }
 
@@ -58,42 +57,6 @@ class PotongResource extends Resource
     {
         return $table
             ->columns([
-                // Split::make([
-                //     Stack::make([
-                //         TextColumn::make('tagihan.periode.periode')
-                //             // ->searchable(isIndividual: true)
-                //             ->date('F Y')
-                //             ->sortable(),
-                //         TextColumn::make('tagihan.periode.penagih.nama')
-                //             // ->searchable(isIndividual: true)
-                //             ->sortable(),
-                //         Tables\Columns\TextColumn::make('tagihan.pegawai.nama')
-                //             ->searchable(isIndividual: true)
-                //             ->sortable(),
-                //         Tables\Columns\TextColumn::make('tagihan.jumlah')
-                //             ->money('IDR', locale: 'id')
-                //             ->color('success')
-                //             ->sortable(),
-                //     ]),
-                //     IconColumn::make('isGapok')
-                //         ->label('potongan')
-                //         ->boolean(),
-                //     TextColumn::make('nominal')
-                //         ->money('IDR', locale: 'id')
-                //         ->color('danger'),
-                //     Tables\Columns\TextColumn::make('created_at')
-                //         ->dateTime()
-                //         ->sortable()
-                //         ->toggleable(isToggledHiddenByDefault: true),
-                //     Tables\Columns\TextColumn::make('updated_at')
-                //         ->dateTime()
-                //         ->sortable()
-                //         ->toggleable(isToggledHiddenByDefault: true),
-                //     Tables\Columns\TextColumn::make('deleted_at')
-                //         ->dateTime()
-                //         ->sortable()
-                //         ->toggleable(isToggledHiddenByDefault: true),
-                // ])->from('md'),
                 TextColumn::make('tagihan.periode.periode')
                     // ->searchable(isIndividual: true)
                     ->date('F Y')
@@ -108,15 +71,17 @@ class PotongResource extends Resource
                     ->money('IDR', locale: 'id')
                     ->color('success')
                     ->sortable(),
-                IconColumn::make('isGapok')
-                    ->label('Potong Gaji')
-                    ->boolean(),
-                // TextColumn::make('isGapok')
-                //     ->label('Potongan')
-                //     ,
+                TextColumn::make('isGapok')
+                    ->label('Potongan')
+                    ->badge()
+                    ->formatStateUsing(fn ($state) => $state === 1 ? 'Gaji Pokok' : 'Tunjangan Kinerja')
+                    ,
                 TextColumn::make('nominal')
                     ->money('IDR', locale: 'id')
                     ->color('danger'),
+
+                IconColumn::make('sukses')->boolean(),
+
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

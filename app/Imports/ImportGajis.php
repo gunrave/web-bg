@@ -18,13 +18,20 @@ class ImportGajis implements ToModel
     public function model(array $row)
     {
 
-        $pegawai = Pegawai::where('nik', $row[3])->first();
+        // $pegawai = Pegawai::where('nik', $row[3])->first();
+        $pegawai = Pegawai::firstOrCreate(
+            ['nik' => $row[8]],
+            ['nama' => $row[9],
+            'norek' => $row[15],
+            'golpang' => substr($row[48], 0, 2),
+            'isActive' => 1,
+        ]);
         $pegawai_id = $pegawai->id;
 
         return new Gaji([
-            'bulan' => $row[1],
-            'tahun' => $row[2],
-            'nominal' => $row[4],
+            'bulan' => $row[4],
+            'tahun' => $row[5],
+            'nominal' => $row[43],
             'pegawai_id' => $pegawai_id,
         ]);
     }

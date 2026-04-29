@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\TagihanResource\Pages;
 use App\Filament\Resources\TagihanResource\RelationManagers;
+use App\Filament\Resources\TagihanResource\RelationManagers\PotonganRelationManager;
 use App\Models\Pegawai;
 use App\Models\periode_tagihan;
 use App\Models\Potong;
@@ -13,6 +14,7 @@ use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -40,7 +42,7 @@ class TagihanResource extends Resource
     {
         return $form
             ->schema([
-                Select::make('periode_tagihan')
+                Select::make('periode_id')
                     ->label('Periode Tagihan')
                     ->relationship(
                         name: 'periode',
@@ -61,6 +63,19 @@ class TagihanResource extends Resource
                                 Toggle::make('isActive')
                                     ->default('1')
                                     ->required(),
+                                Repeater::make('rules')
+                                    ->schema([
+                                        TextInput::make('namakolom'),
+                                        Select::make('operator')
+                                            ->options([
+                                                'sama' => '=',
+                                                'beda' => '<>',
+                                            ]),
+                                        TextInput::make('nilai'),
+                                        TextInput::make('nominal'),
+
+                                    ])
+                                ,
                             ])
                             ->required(),
                     ])
@@ -85,12 +100,10 @@ class TagihanResource extends Resource
                 TextColumn::make('periode.periode')
                     ->searchable(isIndividual: true)
                     ->date('F Y')
-                    ->sortable()
-                    ,
+                    ->sortable(),
                 TextColumn::make('periode.penagih.nama')
                     ->searchable(isIndividual: true)
                     ->sortable(),
-
                 Tables\Columns\TextColumn::make('pegawai.nama')
                     ->searchable(isIndividual: true)
                     ->sortable(),
@@ -98,16 +111,10 @@ class TagihanResource extends Resource
                     ->money('IDR', locale: 'id')
                     ->color('success')
                     ->sortable(),
-                // Tables\Columns\TextColumn::make('potongan.isGapok')
-                //     // ->label('potgaji')
-                //     ->money('IDR', locale: 'id')
-                //     ->color('success')
-                //     ->sortable(),
-                // // SelectColumn::make('potongan.isGapok')
-                // //     ->options([
-                // //         '0' => 'Gaji Pokok',
-                // //         '1' => 'Tunjangan Kinerja',
-                // //     ]),
+                // TextColumn::make('potongan')
+                //     ->state(fn(Builder $query) => $query->where('isGapok', true))
+                // ,
+                // TextColumn::make('status'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -125,48 +132,7 @@ class TagihanResource extends Resource
                 //
             ])
             ->actions([
-                ActionGroup::make([
-                    // Action::make('potongan')
-                    //     ->model(Potong::class)
-                    //     ->form([
-
-                    //         Placeholder::make('tagihan')
-                    //             ->label('Total Tagihan')
-                    //             ->content(fn (Tagihan $record): ?string => $record->jumlah),
-                    //         Select::make('isGapok')
-                    //             ->label('Pilih Pembebanan')
-                    //             ->options([
-                    //                 '0' => 'Tunjangan Kinerja',
-                    //                 '1' => 'Gaji Pokok',
-                    //             ])
-                    //             ->required(),
-                    //         TextInput::make('nominal')
-                    //             ->required()
-                    //             ->numeric(),
-                    //     ])
-                    //     ->icon('heroicon-o-banknotes')
-                    //     ,
-                    Action::make('potongan')
-                        ->model(Potong::class)
-                        ->form([
-                            Placeholder::make('tagihan')
-                                ->label('Total Tagihan')
-                                ->content(fn (Tagihan $record): ?string => $record->jumlah),
-                            Select::make('isGapok')
-                                ->label('Pilih Pembebanan')
-                                ->options([
-                                    '0' => 'Tunjangan Kinerja',
-                                    '1' => 'Gaji Pokok',
-                                ])
-                                ->required(),
-                            TextInput::make('nominal')
-                                ->required()
-                                ->numeric(),
-                        ])
-                        ,
                     Tables\Actions\EditAction::make(),
-                ]),
-
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -178,7 +144,7 @@ class TagihanResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            PotonganRelationManager::class,
         ];
     }
 

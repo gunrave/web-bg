@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
 
 class Penagih extends Model
 {
@@ -11,8 +12,16 @@ class Penagih extends Model
 
     protected $fillable = [
         'nama',
-        'isActive'
+        'isActive',
+        'rules',
     ];
+
+    protected function casts(): array
+    {
+        return [
+            'rules' => 'array',
+        ];
+    }
 
     public function tagihan()
     {
@@ -20,7 +29,7 @@ class Penagih extends Model
             Tagihan::class,
             periode_tagihan::class,
             'penagih_id',
-            'periode_tagihan',
+            'periode_id',
             'id',
             'id'
         );

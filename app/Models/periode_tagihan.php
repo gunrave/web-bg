@@ -21,6 +21,18 @@ class periode_tagihan extends Model
 
     public function tagihan()
     {
-        return $this->hasMany(Tagihan::class);
+        return $this->hasMany(Tagihan::class, 'periode_id','id');
+    }
+
+    public function potongan()
+    {
+        return $this->hasManyThrough(
+            Potong::class,
+            Tagihan::class,
+            'periode_id',
+            'tagihan_id',
+            'id',
+            'id'
+        );
     }
 }
