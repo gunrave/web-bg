@@ -1,0 +1,18 @@
+{
+  "id": "a90c90ec-9d01-44c5-b9fd-26ed191d5a54",
+  "runtime": "bash",
+  "purpose": "Verify vite build succeeds",
+  "script_chars": 56,
+  "started_at": "2026-06-06T04:21:26.494Z",
+  "finished_at": "2026-06-06T04:21:26.536Z",
+  "exit_code": 1,
+  "signal": null,
+  "timed_out": false,
+  "duration_ms": 42,
+  "stdout_bytes": 0,
+  "stderr_bytes": 37,
+  "stdout_truncated": false,
+  "stderr_truncated": false,
+  "stdout_path": "C:\\Users\\User\\Herd\\web-bg-v1\\.gsd\\exec\\a90c90ec-9d01-44c5-b9fd-26ed191d5a54.stdout",
+  "stderr_path": "C:\\Users\\User\\Herd\\web-bg-v1\\.gsd\\exec\\a90c90ec-9d01-44c5-b9fd-26ed191d5a54.stderr"
+}

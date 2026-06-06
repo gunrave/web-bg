@@ -12,7 +12,7 @@
 
 ## Slices
 
-- [ ] **S01: Full-Stack Dependency Upgrade** `risk:High — touches every layer at once (PHP, Composer, npm, Tailwind CSS, Filament API, Vite). A single-point failure in any subsystem blocks the whole milestone. Mitigated by sequenced task order, git stash rollback capability, and verification at each step.` `depends:[]`
+- [x] **S01: Full-Stack Dependency Upgrade** `risk:High — touches every layer at once (PHP, Composer, npm, Tailwind CSS, Filament API, Vite). A single-point failure in any subsystem blocks the whole milestone. Mitigated by sequenced task order, git stash rollback capability, and verification at each step.` `depends:[]`
   > After this: `composer outdated` shows zero packages at latest; `vite build` exits 0; visit /admin, log in, browse all 5 Filament resources, create a Pegawai, import a Gaji Excel file — all works identically to pre-upgrade behavior.
 
 ## Boundary Map

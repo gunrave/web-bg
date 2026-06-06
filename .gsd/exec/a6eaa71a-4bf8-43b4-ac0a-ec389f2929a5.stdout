@@ -1,0 +1,9 @@
+
+In Factory.php line 67:
+                                                                                               
+  The APPDATA or COMPOSER_HOME environment variable must be set for composer to run correctly  
+                                                                                               
+
+outdated [-o|--outdated] [-a|--all] [--locked] [-D|--direct] [--strict] [-M|--major-only] [-m|--minor-only] [-p|--patch-only] [-A|--sort-by-age] [-f|--format FORMAT] [--ignore IGNORE] [--no-dev] [--ignore-platform-req IGNORE-PLATFORM-REQ] [--ignore-platform-reqs] [--] [<package>]
+
+EXIT: 1

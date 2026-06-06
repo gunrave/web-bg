@@ -31,22 +31,22 @@ None — this is the first milestone (M001); no upstream dependency slices. Prod
   - Files: `composer.json`, `composer.lock`
   - Verify: composer validate
 
-- [ ] **T02: Run Filament v4 automated upgrade script** `est:15m`
+- [x] **T02: Run Filament v4 automated upgrade script** `est:15m`
   Why: Filament v3→v4 has PHP API and configuration changes. The automated upgrade script handles most migrations (panel config, resource syntax, middleware changes). Running this immediately after composer update catches API breakage before Tailwind/vite work.
   - Files: `app/Providers/Filament/AdminPanelProvider.php`
   - Verify: php artisan filament:upgrade
 
-- [ ] **T03: Upgrade JS dependencies and configure Vite 6** `est:15m`
+- [x] **T03: Upgrade JS dependencies and configure Vite 6** `est:15m`
   Why: Vite 5→6, laravel-vite-plugin, and axios need bumping. Tailwind CSS v4 requires the @tailwindcss/vite plugin which must be added to the Vite plugin chain before the laravel plugin.
   - Files: `package.json`, `package-lock.json`, `vite.config.js`
   - Verify: test -f node_modules/tailwindcss/package.json
 
-- [ ] **T04: Configure Tailwind CSS v4** `est:20m`
+- [x] **T04: Configure Tailwind CSS v4** `est:20m`
   Why: This is the highest-risk piece of the upgrade. Tailwind v4 uses CSS-first configuration (no tailwind.config.js). The empty resources/css/app.css must be set up with proper v4 theme directives. Filament v4 relies on Tailwind v4.1+ for its CSS. The custom Blade view at resources/views/filament/custom/upload-file.blade.php uses Tailwind utility classes (flex, justify-between, font-bold, text-3xl, shadow, border, rounded, bg-blue-500, etc.) that must be covered by @source so they don't get purged.
   - Files: `resources/css/app.css`
   - Verify: vite build
 
-- [ ] **T05: Contract verification and manual smoke test** `est:20m`
+- [x] **T05: Contract verification and manual smoke test** `est:20m`
   Why: Prove the upgrade succeeded — all dependencies are current, the build works, tests pass, and the app functions identically to before. This is the final quality gate before the slice can be marked complete.
   - Verify: composer outdated
 

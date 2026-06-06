@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "taskId": "T04",
+  "unitId": "M001/S01/T04",
+  "timestamp": 1780719110681,
+  "passed": false,
+  "discoverySource": "task-plan",
+  "checks": [
+    {
+      "command": "vite build",
+      "exitCode": 1,
+      "durationMs": 26,
+      "verdict": "fail"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "1490129e-bfb4-4c84-972e-0d8f1c2e14ae",
+  "runtime": "bash",
+  "purpose": "Run Pest test suite",
+  "script_chars": 59,
+  "started_at": "2026-06-06T04:21:26.498Z",
+  "finished_at": "2026-06-06T04:21:26.539Z",
+  "exit_code": 1,
+  "signal": null,
+  "timed_out": false,
+  "duration_ms": 41,
+  "stdout_bytes": 0,
+  "stderr_bytes": 37,
+  "stdout_truncated": false,
+  "stderr_truncated": false,
+  "stdout_path": "C:\\Users\\User\\Herd\\web-bg-v1\\.gsd\\exec\\1490129e-bfb4-4c84-972e-0d8f1c2e14ae.stdout",
+  "stderr_path": "C:\\Users\\User\\Herd\\web-bg-v1\\.gsd\\exec\\1490129e-bfb4-4c84-972e-0d8f1c2e14ae.stderr"
+}

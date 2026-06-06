@@ -1,7 +1,7 @@
 # Codebase Map
 
-Generated: 2026-06-06T03:28:40Z | Files: 194 | Described: 0/194
-<!-- gsd:codebase-meta {"generatedAt":"2026-06-06T03:28:40Z","fingerprint":"2aafa3510d5892f1ab668ac2de1934fb839f64a4","fileCount":194,"truncated":false} -->
+Generated: 2026-06-06T04:08:51Z | Files: 208 | Described: 0/208
+<!-- gsd:codebase-meta {"generatedAt":"2026-06-06T04:08:51Z","fingerprint":"17fbba733586db8015e87a171da1ada917e10a3b","fileCount":208,"truncated":false} -->
 
 ### (root)/
 - `.editorconfig`
@@ -204,11 +204,19 @@ Generated: 2026-06-06T03:28:40Z | Files: 194 | Described: 0/194
 ### public/css/filament/support/
 - `public/css/filament/support/support.css`
 
+### public/fonts/filament/filament/inter/
+- `public/fonts/filament/filament/inter/index.css`
+
+### public/js/filament/actions/
+- `public/js/filament/actions/actions.js`
+
 ### public/js/filament/filament/
 - `public/js/filament/filament/app.js`
 - `public/js/filament/filament/echo.js`
 
 ### public/js/filament/forms/components/
+- `public/js/filament/forms/components/checkbox-list.js`
+- `public/js/filament/forms/components/code-editor.js`
 - `public/js/filament/forms/components/color-picker.js`
 - `public/js/filament/forms/components/date-time-picker.js`
 - `public/js/filament/forms/components/file-upload.js`
@@ -216,18 +224,36 @@ Generated: 2026-06-06T03:28:40Z | Files: 194 | Described: 0/194
 - `public/js/filament/forms/components/markdown-editor.js`
 - `public/js/filament/forms/components/rich-editor.js`
 - `public/js/filament/forms/components/select.js`
+- `public/js/filament/forms/components/slider.js`
 - `public/js/filament/forms/components/tags-input.js`
 - `public/js/filament/forms/components/textarea.js`
 
 ### public/js/filament/notifications/
 - `public/js/filament/notifications/notifications.js`
 
+### public/js/filament/schemas/
+- `public/js/filament/schemas/schemas.js`
+
+### public/js/filament/schemas/components/
+- `public/js/filament/schemas/components/actions.js`
+- `public/js/filament/schemas/components/tabs.js`
+- `public/js/filament/schemas/components/wizard.js`
+
 ### public/js/filament/support/
 - `public/js/filament/support/async-alpine.js`
 - `public/js/filament/support/support.js`
 
+### public/js/filament/tables/
+- `public/js/filament/tables/tables.js`
+
 ### public/js/filament/tables/components/
 - `public/js/filament/tables/components/table.js`
+
+### public/js/filament/tables/components/columns/
+- `public/js/filament/tables/components/columns/checkbox.js`
+- `public/js/filament/tables/components/columns/select.js`
+- `public/js/filament/tables/components/columns/text-input.js`
+- `public/js/filament/tables/components/columns/toggle.js`
 
 ### public/js/filament/widgets/components/
 - `public/js/filament/widgets/components/chart.js`
