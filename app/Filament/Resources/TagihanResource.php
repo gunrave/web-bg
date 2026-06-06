@@ -15,7 +15,7 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Repeater;
-use Filament\Forms\Form;
+use Filament\Schemas\Schema;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -36,11 +36,11 @@ class TagihanResource extends Resource
 {
     protected static ?string $model = Tagihan::class;
 
-    protected static ?string $navigationIcon = 'heroicon-s-list-bullet';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-s-list-bullet';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
                 Select::make('periode_id')
                     ->label('Periode Tagihan')
