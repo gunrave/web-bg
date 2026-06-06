@@ -1,0 +1,32 @@
+{
+  "template": "bugfix",
+  "templateName": "Bug Fix",
+  "description": "Error: Cannot enter milestone M001: isolation is degraded from a prior worktree failure. Close processes locking the worktree and retry, or run /gsd doctor fix.",
+  "branch": "gsd/bugfix/error-cannot-enter-milestone-m001-isolat",
+  "phases": [
+    {
+      "name": "triage",
+      "index": 0,
+      "status": "active"
+    },
+    {
+      "name": "fix",
+      "index": 1,
+      "status": "pending"
+    },
+    {
+      "name": "verify",
+      "index": 2,
+      "status": "pending"
+    },
+    {
+      "name": "ship",
+      "index": 3,
+      "status": "pending"
+    }
+  ],
+  "currentPhase": 0,
+  "startedAt": "2026-06-06T04:00:48.225Z",
+  "updatedAt": "2026-06-06T04:00:48.225Z",
+  "artifactDir": "C:\\Users\\User\\Herd\\web-bg-v1\\.gsd\\workflows\\bugfixes\\260606-5-error-cannot-enter-milestone-m001-isolat"
+}

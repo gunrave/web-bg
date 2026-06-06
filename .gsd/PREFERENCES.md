@@ -13,7 +13,7 @@ models:
 git:
   auto_push: true
   main_branch: main
-  isolation: branch
+  isolation: none
 token_profile: budget
 verification_commands:
   - npm run build
