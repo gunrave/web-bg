@@ -61,3 +61,11 @@ com[1-9]
 com[1-9].*
 lpt[1-9]
 lpt[1-9].*
+
+# ── GSD runtime/transient files (auto-generated) ──
+.gsd/gsd.db*
+.gsd/runtime/
+.gsd/activity/
+.gsd/auto.lock
+.gsd/completed-units*.json
+.gsd/event-log.jsonl
