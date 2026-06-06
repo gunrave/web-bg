@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "projectStartedAt": 1780714577490,
+  "units": [
+    {
+      "type": "research-milestone",
+      "id": "M001",
+      "model": "deepseek-v4-flash",
+      "startedAt": 1780714580449,
+      "finishedAt": 1780714811535,
+      "autoSessionKey": "1780714576712",
+      "tokens": {
+        "input": 69369,
+        "output": 16422,
+        "cacheRead": 2546176,
+        "cacheWrite": 0,
+        "total": 2631967
+      },
+      "cost": 0.0214391128,
+      "toolCalls": 100,
+      "assistantMessages": 45,
+      "userMessages": 0,
+      "apiRequests": 45,
+      "promptCharCount": 16849,
+      "baselineCharCount": 15477,
+      "skills": [
+        "api-design",
+        "decompose-into-slices",
+        "design-an-interface",
+        "grill-me",
+        "observability",
+        "write-docs",
+        "write-milestone-brief"
+      ],
+      "cacheHitRate": 97,
+      "compressionSavings": 0
+    }
+  ]
+}
