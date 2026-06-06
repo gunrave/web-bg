@@ -10,6 +10,9 @@ use App\Models\periode_tagihan;
 use App\Models\Potong;
 use App\Models\Tagihan;
 use Filament\Actions\CreateAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\BulkActionGroup;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Hidden;
@@ -132,11 +135,11 @@ class TagihanResource extends Resource
                 //
             ])
             ->actions([
-                    Tables\Actions\EditAction::make(),
+                    EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }
