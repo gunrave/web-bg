@@ -5,15 +5,15 @@ models:
   research: opencode-go/deepseek-v4-flash
   planning: opencode-go/deepseek-v4-pro
   discuss: opencode-go/deepseek-v4-pro
-  execution: opencode-go/qwen3.7-max
-  execution_simple: opencode-go/qwen3.7-max
-  completion: opencode-go/qwen3.7-max
+  execution: opencode-go/deepseek-v4-flash
+  execution_simple: opencode-go/deepseek-v4-flash
+  completion: opencode-go/deepseek-v4-flash
   validation: opencode-go/deepseek-v4-pro
-  subagent: opencode-go/qwen3.7-max
+  subagent: opencode-go/deepseek-v4-flash
 git:
-  isolation: worktree
-  main_branch: main
   auto_push: true
+  main_branch: main
+  isolation: branch
 token_profile: budget
 verification_commands:
   - npm run build
